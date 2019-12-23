@@ -1,0 +1,14 @@
+@import "../../variable.scss";
+
+.searchBar {
+  margin-right: 12%;
+  width: 70% !important;
+  .form-control {
+    -webkit-box-shadow: none !important;
+    -moz-box-shadow: none !important;
+    box-shadow: none !important;
+  }
+  span {
+    color: $iconColor !important;
+  }
+}

@@ -1,0 +1,20 @@
+@import "../../variable.scss";
+
+.navbar {
+  width: 100%;
+  padding: 0.5rem 0;
+  background: $primaryColor;
+  &__brand-logo {
+    margin-left: 13%;
+    width: 3.5%;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar{
+    &__brand-logo{
+      width: 15%;
+      margin-left: 0;
+    }
+  }
+}
