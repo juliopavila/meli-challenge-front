@@ -10,9 +10,22 @@
   }
 }
 
+.searchBar {
+  margin-right: 12%;
+  width: 70% !important;
+  .form-control {
+    -webkit-box-shadow: none !important;
+    -moz-box-shadow: none !important;
+    box-shadow: none !important;
+  }
+  button {
+    color: $iconColor !important;
+  }
+}
+
 @media (max-width: 768px) {
-  .navbar{
-    &__brand-logo{
+  .navbar {
+    &__brand-logo {
       width: 15%;
       margin-left: 0;
     }
