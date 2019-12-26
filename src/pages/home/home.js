@@ -14,9 +14,13 @@ class Home extends React.Component {
     };
   }
 
+  /**
+   * Metodo para manejar el estado de los productos
+   * que se ejecuta con la info actualizada del componente
+   * Navbar
+   */
   handlerProducts = prod => {
     this.setState({ products: prod });
-    console.log(this.state.products);
   };
 
   render() {

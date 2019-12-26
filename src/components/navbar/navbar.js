@@ -15,18 +15,30 @@ class Navbar extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
+  /**
+   * Metodo para manejar los cambio de estado
+   * del input asociado al navbar
+   */
   handleChange = event => {
     this.setState({
       query: event.target.value
     });
   };
 
+  /**
+   * Metodo para manejar la petición al servidor
+   * cuando se le hace click al botón de buscar
+   */
   handleSubmit = event => {
     console.log("Espera mientra recibo la respuesta de tu peticion...");
     this.handlerPetition();
     event.preventDefault();
   };
 
+  /**
+   * Metodo para manejar la petición al servidor
+   * cuando se le hace click al botón de enter
+   */
   handleKeyDown = event => {
     if (event.key === "Enter") {
       console.log("Espera mientra recibo la respuesta de tu peticion...");
@@ -34,6 +46,10 @@ class Navbar extends React.Component {
     }
   };
 
+  /**
+   * Metodo que maneja la peticion al servidor
+   * interactua con API service
+   */
   handlerPetition = () => {
     this.setState({ loading: true, error: null });
     this.timeoutId = getProductsApi(this.state.query)
@@ -47,6 +63,10 @@ class Navbar extends React.Component {
       .catch(error => this.setState({ loading: false, error: error }));
   };
 
+  /**
+   * Ciclo de vida que se ejecuta cuando
+   * se destruye el component
+  */
   componentWillUnmount() {
     clearTimeout(this.timeoutId);
   }

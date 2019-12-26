@@ -16,11 +16,14 @@ class ProductsDetails extends React.Component {
     };
   }
 
+  /**
+   * Ciclo de vida que se ejecuta cuando el componente cargue
+   * y realiza un peticion al servidor usando API service
+   */
   componentDidMount() {
     this.setState({ loading: true, error: null });
     this.timeoutId = getProdDetailsApi(this.props.match.params.id)
       .then(res => {
-        console.log(res.data.item);
         this.setState({
           details: res.data.item,
           loading: false
@@ -29,6 +32,10 @@ class ProductsDetails extends React.Component {
       .catch(error => this.setState({ loading: false, error: error }));
   }
 
+  /**
+   * Ciclo de vida que se ejecuta cuando el componente
+   * se destruye
+   */
   componentWillUnmount() {
     clearTimeout(this.timeoutId);
   }
