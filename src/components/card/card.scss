@@ -1,6 +1,8 @@
 @import "../../variable.scss";
 
+
 .card {
+  color: $textColor;
   &__container {
     margin-left: 15%;
     width: 70%;
@@ -12,8 +14,24 @@
   }
   &__title-h6 {
     margin-top: 20%;
+    text-align: center;
   }
   img {
     width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .card {
+    h5 {
+      text-align: center !important;
+    }
+    &__body {
+      text-align: center;
+    }
+    &__title-h6 {
+      margin-top: 0;
+      text-align: center;
+    }
   }
 }
