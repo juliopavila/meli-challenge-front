@@ -1,0 +1,11 @@
+@import "../../variable.scss";
+
+body {
+  background: $primaryBackground !important;
+}
+
+.home {
+  &__card-container {
+    margin-top: 3%;
+  }
+}
